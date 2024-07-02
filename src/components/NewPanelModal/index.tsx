@@ -18,7 +18,7 @@ const NewPanelModal = () => {
             <dialog className="fixed left-0 top-0 w-full h-full bg-black bg-opacity-50 z-999 overflow-auto backdrop-blur flex justify-center items-center">
                 <Link className="fixed left-0 top-0 w-full h-full flex justify-center items-center" href={pathname}>
                 </Link>
-                <div className="relative bg-gray-dark m-auto rounded-2xl p-8 z-9999">
+                <div className="relative bg-gray-dark m-auto rounded-2xl py-8 px-16 z-9999">
                     <div className="flex flex-col items-center">
                         <Link className="absolute right-4 top-4" href={pathname}>
                             <button type="button"><CloseMark /></button>
@@ -47,6 +47,7 @@ const NewPanelModal = () => {
                             />
                             <ButtonSolid
                                 label="Acionar"
+                                customClasses="mt-8"
                             />
                         </div>
                     </div>

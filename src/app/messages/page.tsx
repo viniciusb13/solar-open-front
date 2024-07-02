@@ -4,8 +4,8 @@ import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 
 export const metadata: Metadata = {
-  title: "Next.js Messages Page | NextAdmin - Next.js Dashboard Kit",
-  description: "This is Next.js Messages page for NextAdmin Dashboard Kit",
+  title: "Mensagens | Solar Open",
+  description: "Solar Open",
 };
 
 const Messages = () => {

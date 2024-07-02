@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 export const metadata: Metadata = {
-  title: "Solar Open",
-  description: "This is Next.js Settings page for NextAdmin Dashboard Kit",
+  title: "Configurações | Solar Open",
+  description: "Solar Open",
 };
 
 const Settings = () => {

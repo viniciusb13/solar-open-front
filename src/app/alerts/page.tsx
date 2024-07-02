@@ -7,8 +7,8 @@ import AlertWarning from "@/components/Alerts/AlertWarning";
 
 
 export const metadata: Metadata = {
-  title: "Next.js Alerts Page | NextAdmin - Next.js Dashboard Kit",
-  description: "This is Next.js Alerts page for NextAdmin Dashboard Kit",
+  title: "Alertas | Solar Open",
+  description: "Solar Open",
 };
 
 const Alerts = () => {
@@ -17,9 +17,9 @@ const Alerts = () => {
       <div className="mx-auto w-full max-w-[970px]">
         <Breadcrumb pageName="Alertas" />
 
-        <AlertError />
+        {/* <AlertError />
         <AlertSuccess />
-        <AlertWarning />
+        <AlertWarning /> */}
 
       </div>
     </DefaultLayout>

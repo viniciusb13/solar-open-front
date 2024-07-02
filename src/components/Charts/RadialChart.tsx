@@ -5,10 +5,11 @@ import ReactApexChart from "react-apexcharts";
 
 const RadialChart: React.FC = () => {
     
-    const series = [90];
+    const series = [81];
     const options: ApexOptions = {
         chart: {
             height: 220,
+            width: 200,
             type: "radialBar",
         },
 
@@ -61,6 +62,7 @@ const RadialChart: React.FC = () => {
             series={series}
             type="radialBar"
             height={220}
+            width={200}
         />
     </div>
   );

@@ -18,7 +18,7 @@ const Breadcrumb = ({ pageName }: BreadcrumbProps) => {
               Visão Geral /
             </Link>
           </li>
-          <li className="font-medium text-primary">{pageName}</li>
+          <li className="font-medium text-primarySolar">{pageName}</li>
         </ol>
       </nav>
     </div>
