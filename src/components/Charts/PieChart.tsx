@@ -72,9 +72,9 @@ const ChartThree: React.FC = () => {
             Monitoramento Geral
           </h4>
         </div>
-        <div>
+        {/* <div>
           <DefaultSelectOption options={["Mensal", "Anual"]} />
-        </div>
+        </div> */}
       </div>
 
       <div className="mb-8">

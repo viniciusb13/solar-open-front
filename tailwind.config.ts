@@ -28,7 +28,8 @@ const config: Config = {
         "stroke-dark": "#27303E",
         dark: {
           DEFAULT: "#111928",
-          2: "#1F2A37",
+          // 2: "#1F2A37",
+          2: "#312e33",          
           3: "#374151",
           4: "#4B5563",
           5: "#6B7280",
@@ -38,7 +39,8 @@ const config: Config = {
         },
         gray: {
           DEFAULT: "#EFF4FB",
-          dark: "#122031",
+          // dark: "#122031",
+          dark: "#37313C",
           1: "#F9FAFB",
           2: "#F3F4F6",
           3: "#E5E7EB",

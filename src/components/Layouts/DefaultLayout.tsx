@@ -2,6 +2,8 @@
 import React, { useState, ReactNode } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import PanelModal from '@/components/PanelModal';
+import NewPanelModal from "@/components/NewPanelModal";
 
 export default function DefaultLayout({
   children,
@@ -9,8 +11,12 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  window.document.documentElement.classList.add("dark")
+
   return (
     <>
+      <PanelModal />
+      <NewPanelModal />
       {/* <!-- ===== Page Wrapper Star ===== --> */}
       <div className="flex h-screen overflow-hidden">
         {/* <!-- ===== Sidebar Star ===== --> */}

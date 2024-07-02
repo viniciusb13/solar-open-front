@@ -9,10 +9,6 @@ const LineChart: React.FC = () => {
       name: "Received Amount",
       data: [0, 20, 35, 45, 35, 55, 65, 50, 65, 75, 60, 75],
     },
-    {
-      name: "Due Amount",
-      data: [15, 9, 17, 32, 25, 68, 80, 68, 84, 94, 74, 62],
-    },
   ];
 
   const options: ApexOptions = {
@@ -21,7 +17,7 @@ const LineChart: React.FC = () => {
       position: "top",
       horizontalAlign: "left",
     },
-    colors: ["#5750F1", "#0ABEF9"],
+    colors: ["#FFD159"],
     chart: {
       fontFamily: "Satoshi, sans-serif",
       height: 310,
@@ -139,7 +135,7 @@ const LineChart: React.FC = () => {
           {/* <p className="font-medium uppercase text-dark dark:text-dark-6">
             Short by:
           </p> */}
-          <DefaultSelectOption options={["Mensal", "Anual"]} />
+          {/* <DefaultSelectOption options={["Mensal", "Anual"]} /> */}
         </div>
       </div>
       <div>

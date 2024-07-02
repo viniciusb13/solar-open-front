@@ -13,7 +13,7 @@ const ProgressBar = ({ progressPercentage }: ProgressBarProps) => {
     }, [progressPercentage]);
 
     return (
-        <div className='h-3 rounded-2xl bg-[#F1EBF599] mx-6'>
+        <div className='h-3 rounded-2xl bg-[#F1EBF599]'>
             <div
                 style={{ width: `${progress}%`}}
                 className={`h-full transition-width duration-700 ease-in-out rounded-2xl rounded-tl-2xl rounded-bl-2xl ${

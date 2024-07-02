@@ -13,6 +13,7 @@ import {
 } from './CarouselArrowButtons'
 import { DotButton, useDotButton } from './CarouselDotButton'
 import PanelCard from '@/components/PanelCard/PanelCard'
+import { Panel } from '@/types/panel'
 
 const TWEEN_FACTOR_BASE = 0.84
 
@@ -20,12 +21,12 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max)
 
 type PropType = {
-  slides: number[]
+  panels: Panel[]
   options?: EmblaOptionsType
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
+  const { panels, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
   const tweenFactor = useRef(0)
 
@@ -95,50 +96,50 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       .on('slideFocus', tweenOpacity)
   }, [emblaApi, tweenOpacity])
 
-  const panels = [
-    {
-        name: "Painel 1",
-        health: 99,
-        currentEnergy: 198,
-        operatingPeriod: "08h00 - 16h00",
-    },
-        {
-        name: "Painel 1",
-        health: 87,
-        currentEnergy: 98,
-        operatingPeriod: "08h00 - 16h00",
-    },
-    {
-        name: "Painel 2",
-        health: 55,
-        currentEnergy: 113,
-        operatingPeriod: "08h00 - 16h00",
-    },
-        {
-        name: "Painel 3",
-        health: 73,
-        currentEnergy: 54,
-        operatingPeriod: "08h00 - 16h00",
-    },
-        {
-        name: "Painel 4",
-        health: 81,
-        currentEnergy: 85,
-        operatingPeriod: "08h00 - 16h00",
-    },
-        {
-        name: "Painel 5",
-        health: 93,
-        currentEnergy: 291,
-        operatingPeriod: "08h00 - 16h00",
-    },
-    {
-        name: "Painel 6",
-        health: 39,
-        currentEnergy: 121,
-        operatingPeriod: "08h00 - 16h00",
-    }
-]
+//   const panels = [
+//     {
+//         name: "Painel 1",
+//         health: 99,
+//         currentEnergy: 198,
+//         operatingPeriod: "08h00 - 16h00",
+//     },
+//         {
+//         name: "Painel 1",
+//         health: 87,
+//         currentEnergy: 98,
+//         operatingPeriod: "08h00 - 16h00",
+//     },
+//     {
+//         name: "Painel 2",
+//         health: 55,
+//         currentEnergy: 113,
+//         operatingPeriod: "08h00 - 16h00",
+//     },
+//         {
+//         name: "Painel 3",
+//         health: 73,
+//         currentEnergy: 54,
+//         operatingPeriod: "08h00 - 16h00",
+//     },
+//         {
+//         name: "Painel 4",
+//         health: 81,
+//         currentEnergy: 85,
+//         operatingPeriod: "08h00 - 16h00",
+//     },
+//         {
+//         name: "Painel 5",
+//         health: 93,
+//         currentEnergy: 291,
+//         operatingPeriod: "08h00 - 16h00",
+//     },
+//     {
+//         name: "Painel 6",
+//         health: 39,
+//         currentEnergy: 121,
+//         operatingPeriod: "08h00 - 16h00",
+//     }
+// ]
 
   return (
     <div className="embla">

@@ -3,16 +3,13 @@ import { ApexOptions } from "apexcharts";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
+import { fill } from "tailwindcss/defaultTheme";
 
 const PanelChart: React.FC = () => {
   const series = [
     {
-      name: "Received Amount",
-      data: [0, 20, 35, 45, 35, 55, 65, 50, 65, 75, 60, 75],
-    },
-    {
       name: "Due Amount",
-      data: [15, 9, 17, 32, 25, 68, 80, 68, 84, 94, 74, 62],
+      data: [15, 9, 80, 32, 94, 68, 68, 74, 43],
     },
   ];
 
@@ -22,7 +19,9 @@ const PanelChart: React.FC = () => {
       position: "top",
       horizontalAlign: "left",
     },
-    colors: ["#5750F1", "#0ABEF9"],
+    colors: ["#FFD159"],
+    // colors: ["#5750F1", "#0ABEF9"],
+    
     chart: {
       fontFamily: "Satoshi, sans-serif",
       height: 310,
@@ -99,18 +98,16 @@ const PanelChart: React.FC = () => {
     xaxis: {
       type: "category",
       categories: [
-        "09/23",
-        "10/23",
-        "11/23",
-        "12/23",
-        "01/24",
-        "02/24",
-        "03/24",
-        "04/24",
-        "05/24",
-        "06/24",
-        "07/24",
-        "08/24",
+        "08h00",
+        "09h00",
+        "10h00",
+        "11h00",
+        "12h00",
+        "13h00",
+        "14h00",
+        "15h00",
+        "16h00",
+        "17h00",
       ],
       axisBorder: {
         show: false,
@@ -140,7 +137,10 @@ const PanelChart: React.FC = () => {
           {/* <p className="font-medium uppercase text-dark dark:text-dark-6">
             Short by:
           </p> */}
-          <DefaultSelectOption options={["Mensal", "Anual"]} />
+          {/* <DefaultSelectOption options={["Mensal", "Anual"]} /> */}
+           <div className="relative z-20 inline-flex px-2 py-1 appearance-none rounded-[8px] border border-stroke bg-white text-medium font-medium outline-none dark:border-dark-3 dark:bg-dark-2">
+             <p>9 kwh</p>
+           </div>
         </div>
       </div>
       <div>
