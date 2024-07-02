@@ -2,11 +2,11 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
-import SettingBoxes from "@/components/SettingBoxes";
+import UserSettingBoxes from "@/components/UserSettingBoxes";
 
 export const metadata: Metadata = {
-  title: "Next.js Settings Page | NextAdmin - Next.js Dashboard c",
-  description: "This is Next.js Settings page for NextAdmin Dashboard Kit",
+  title: "Configurações da Conta | Solar Open",
+  description: "Solar Open",
 };
 
 const AccountSettings = () => {
@@ -15,7 +15,7 @@ const AccountSettings = () => {
       <div className="mx-auto w-full max-w-[1080px]">
         <Breadcrumb pageName="Configurações da Conta" />
 
-        {/* <SettingBoxes /> */}
+        <UserSettingBoxes />
       </div>
     </DefaultLayout>
   );

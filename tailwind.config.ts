@@ -24,6 +24,7 @@ const config: Config = {
         transparent: "transparent",
         white: "#FFFFFF",
         primary: "#5750F1",
+        primarySolar: "#FFD159",
         stroke: "#E6EBF1",
         "stroke-dark": "#27303E",
         dark: {
@@ -322,6 +323,14 @@ const config: Config = {
       keyframes: {
         linspin: {
           "100%": { transform: "rotate(360deg)" },
+        },
+        pulse: {
+          "0%, 100%": {
+            opacity: "1"
+          },
+          "50%": {
+            opacity: "0.2"
+          },
         },
         easespin: {
           "12.5%": { transform: "rotate(135deg)" },

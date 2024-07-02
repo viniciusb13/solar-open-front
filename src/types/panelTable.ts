@@ -1,4 +1,4 @@
-export type Package = {
+export type PanelTable = {
   name: string;
   storedEnergy: string;
   currentEnergy: string;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SwitcherFour = () => {
+const Switcher = () => {
   const [enabled, setEnabled] = useState<boolean>(false);
 
   return (
@@ -18,7 +18,7 @@ const SwitcherFour = () => {
               setEnabled(!enabled);
             }}
           />
-          <div className="block h-8 w-14 rounded-full bg-[#212B36] dark:bg-primary"></div>
+          <div className={`block h-8 w-14 rounded-full bg-[#212B36] dark:bg-[#5A616B] ${enabled && 'dark:bg-primarySolar'}`}></div>
           <div
             className={`absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
               enabled && "!right-1 !translate-x-full"
@@ -30,4 +30,4 @@ const SwitcherFour = () => {
   );
 };
 
-export default SwitcherFour;
+export default Switcher;

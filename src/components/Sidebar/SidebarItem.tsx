@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import SidebarDropdown from "@/components/Sidebar/SidebarDropdown";
 
 const SidebarItem = ({ item, pageName, setPageName, sidebarOpen }: any) => {
   const handleClick = () => {
@@ -46,16 +45,6 @@ const SidebarItem = ({ item, pageName, setPageName, sidebarOpen }: any) => {
             </svg>
           )}
         </Link>
-
-        {item.children && (
-          <div
-            className={`translate transform overflow-hidden ${
-              pageName !== item.label.toLowerCase() && "hidden"
-            }`}
-          >
-            <SidebarDropdown item={item.children} />
-          </div>
-        )}
       </li>
     </>
   );

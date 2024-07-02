@@ -1,7 +1,8 @@
-import HomePage from "@/components/Dashboard/HomePage";
-import { Metadata } from "next";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import React from "react";
+import { Metadata } from "next";
+
+import HomePage from "@/components/HomePage";
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
 export const metadata: Metadata = {
   title:

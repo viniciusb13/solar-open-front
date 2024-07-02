@@ -1,35 +1,47 @@
 import { useState } from "react";
 
-const CheckboxThree = () => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+const SwitcherWithIcon = () => {
+  const [enabled, setEnabled] = useState(false);
 
   return (
     <div>
       <label
-        htmlFor="checkboxLabelThree"
-        className="flex cursor-pointer select-none items-center text-body-sm font-medium"
+        htmlFor="toggle3"
+        className="flex cursor-pointer select-none items-center"
       >
         <div className="relative">
           <input
             type="checkbox"
-            id="checkboxLabelThree"
+            id="toggle3"
             className="sr-only"
             onChange={() => {
-              setIsChecked(!isChecked);
+              setEnabled(!enabled);
             }}
           />
+          <div className="block h-8 w-14 rounded-full bg-gray-3 dark:bg-[#5A616B]"></div>
           <div
-            className={`box mr-2 flex h-5 w-5 items-center justify-center rounded border ${
-              isChecked
-                ? "border-primary bg-gray-2 dark:bg-transparent"
-                : "border-dark-5 dark:border-dark-6"
+            className={`dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-switch-1 transition ${
+              enabled && "!right-1 !translate-x-full !bg-primary dark:!bg-white"
             }`}
           >
-            <span
-              className={`text-primary opacity-0 ${
-                isChecked && "!opacity-100"
-              }`}
-            >
+            <span className={`hidden ${enabled && "!block"}`}>
+              <svg
+                className="fill-white dark:fill-dark"
+                width="11"
+                height="8"
+                viewBox="0 0 11 8"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M10.2355 0.812752L10.2452 0.824547C10.4585 1.08224 10.4617 1.48728 10.1855 1.74621L4.85633 7.09869C4.66442 7.29617 4.41535 7.4001 4.14693 7.4001C3.89823 7.4001 3.63296 7.29979 3.43735 7.09851L0.788615 4.43129C0.536589 4.1703 0.536617 3.758 0.788643 3.49701C1.04747 3.22897 1.4675 3.22816 1.72731 3.49457L4.16182 5.94608L9.28643 0.799032C9.54626 0.532887 9.96609 0.533789 10.2248 0.801737L10.2355 0.812752Z"
+                  fill=""
+                />
+              </svg>
+            </span>
+            <span className={`${enabled && "hidden"}`}>
               <svg
                 className="fill-current"
                 width="11"
@@ -55,10 +67,9 @@ const CheckboxThree = () => {
             </span>
           </div>
         </div>
-        Checkbox Text
       </label>
     </div>
   );
 };
 
-export default CheckboxThree;
+export default SwitcherWithIcon;

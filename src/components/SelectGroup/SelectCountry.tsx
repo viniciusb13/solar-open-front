@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const SelectGroupTwo: React.FC = () => {
+const SelectCountry: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
 
@@ -12,7 +12,7 @@ const SelectGroupTwo: React.FC = () => {
   return (
     <div>
       <label className="mb-3 block text-body-sm font-medium text-dark dark:text-white">
-        Select Country
+        Selecione seu país
       </label>
 
       <div className="relative z-20 rounded-[7px] bg-white dark:bg-dark-2">
@@ -48,14 +48,11 @@ const SelectGroupTwo: React.FC = () => {
             isOptionSelected ? "text-dark dark:text-white" : ""
           }`}
         >
-          <option value="UnitedStates" className="text-dark-5 dark:text-dark-6">
-            United States
+          <option value="Brazil" className="text-dark-5 dark:text-dark-6">
+            Brasil
           </option>
-          <option value="UK" className="text-dark-5 dark:text-dark-6">
-            UK
-          </option>
-          <option value="Canada" className="text-dark-5 dark:text-dark-6">
-            Canada
+          <option value="Other" className="text-dark-5 dark:text-dark-6">
+            Outro
           </option>
         </select>
 
@@ -81,4 +78,4 @@ const SelectGroupTwo: React.FC = () => {
   );
 };
 
-export default SelectGroupTwo;
+export default SelectCountry;

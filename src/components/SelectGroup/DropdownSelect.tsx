@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const SelectGroupThree: React.FC = () => {
+const DropdownSelect: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
   const [isOptionSelected, setIsOptionSelected] = useState<boolean>(false);
 
@@ -13,7 +13,7 @@ const SelectGroupThree: React.FC = () => {
     <div className="mb-5.5">
       <label className="mb-3 block text-body-sm font-medium text-dark dark:text-white">
         {" "}
-        Which option best describes you?{" "}
+        Qual opção melhor descreve você?{" "}
       </label>
 
       <div className="dark:bg-form-input relative z-20 bg-transparent">
@@ -28,10 +28,10 @@ const SelectGroupThree: React.FC = () => {
           }`}
         >
           <option value="" disabled className="text-body dark:text-bodydark">
-            Select your subject
+            Selecione uma opção
           </option>
           <option value="Student" className="text-body dark:text-bodydark">
-            Student
+            Estudante
           </option>
           <option
             value="UX/UI Designer"
@@ -43,7 +43,7 @@ const SelectGroupThree: React.FC = () => {
             value="Web Developer"
             className="text-body dark:text-bodydark"
           >
-            Web Developer
+            Desenvolvedor Web
           </option>
         </select>
 
@@ -71,4 +71,4 @@ const SelectGroupThree: React.FC = () => {
   );
 };
 
-export default SelectGroupThree;
+export default DropdownSelect;
