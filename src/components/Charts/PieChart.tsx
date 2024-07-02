@@ -3,7 +3,14 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
 
-const ChartThree: React.FC = () => {
+interface PieChartPropTypes {
+  label: string;
+  NoBorder?: boolean;
+  customClass?: string;
+  chartWidth?: string;
+}
+
+const PieChart = ({ label, NoBorder, chartWidth }: PieChartPropTypes) => {
   const series = [37, 19, 31];
 
   const options: ApexOptions = {
@@ -11,7 +18,7 @@ const ChartThree: React.FC = () => {
       fontFamily: "Satoshi, sans-serif",
       type: "donut",
     },
-    colors: ["#5750F1", "#5475E5", "#8099EC", "#ADBCF2"],
+    colors: ["#FFC300", "#FB902E", "#F33154", "#ADBCF2"],
     labels: ["Gasta", "Armazenada", "Previsão"],
     legend: {
       show: false,
@@ -49,7 +56,7 @@ const ChartThree: React.FC = () => {
         breakpoint: 2600,
         options: {
           chart: {
-            width: 415,
+            width: chartWidth ? chartWidth : 415,
           },
         },
       },
@@ -65,11 +72,11 @@ const ChartThree: React.FC = () => {
   };
 
   return (
-    <div className="col-span-12 rounded-[10px] bg-white px-7.5 pb-7 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-5">
+    <div className={`col-span-12 rounded-[10px] bg-white px-7.5 pb-7 pt-7.5 dark:bg-gray-dark ${!NoBorder && "shadow-1 dark:shadow-card"} xl:col-span-5`}>
       <div className="mb-9 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
-            Monitoramento Geral
+            {label}
           </h4>
         </div>
         {/* <div>
@@ -87,7 +94,7 @@ const ChartThree: React.FC = () => {
         <div className="-mx-7.5 flex flex-wrap items-center justify-start gap-y-2.5">
           <div className="w-full px-7.5 sm:w-1/2">
             <div className="flex w-full items-center">
-              <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-blue"></span>
+              <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#FFC300]"></span>
               <p className="flex w-full gap-3 text-body-sm font-medium text-dark dark:text-dark-6">
                 <span> Gasta </span>
                 <span> 65% </span>
@@ -96,7 +103,7 @@ const ChartThree: React.FC = () => {
           </div>
           <div className="w-full px-7.5 sm:w-1/2">
             <div className="flex w-full items-center">
-              <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-blue-light"></span>
+              <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#FB902E]"></span>
               <p className="flex w-full gap-3 text-body-sm font-medium text-dark dark:text-dark-6">
                 <span> Armazenada </span>
                 <span> 23% </span>
@@ -105,7 +112,7 @@ const ChartThree: React.FC = () => {
           </div>
           <div className="w-full px-7.5 sm:w-1/2">
             <div className="flex w-full items-center">
-              <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-blue-light-2"></span>
+              <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#F33154]"></span>
               <p className="flex w-full gap-3 text-body-sm font-medium text-dark dark:text-dark-6">
                 <span> Previsão </span>
                 <span> 31% </span>
@@ -127,4 +134,4 @@ const ChartThree: React.FC = () => {
   );
 };
 
-export default ChartThree;
+export default PieChart;
