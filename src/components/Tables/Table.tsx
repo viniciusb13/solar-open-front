@@ -96,7 +96,7 @@ const Table = () => {
                   className={`border-[#eee] px-4 py-4 dark:border-dark-3 xl:pr-7.5 ${index === panelData.length - 1 ? "border-b-0" : "border-b"}`}
                 >
                   <div className="flex items-center justify-end space-x-3.5">
-                    <button className="hover:text-primary">
+                    <button name="remover" className="hover:text-primary">
                       <svg
                         className="fill-current"
                         width="20"
