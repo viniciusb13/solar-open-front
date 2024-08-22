@@ -55,7 +55,7 @@ const PanelModal = () => {
 
 
                                 <div>
-                                    <RadialChart />
+                                    <RadialChart value={77}/>
                                 </div>
 
                                 <div className="flex flex-col gap-4 p-7.5">

@@ -4,6 +4,7 @@ import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import WeatherInfo from "@/components/WeatherInfo/WeatherInfo";
 import PanelChart from "@/components/PanelChart/PanelChart";
 import PanelCarousel from "@/components/PanelCarousel/PanelCarousel";
+// import { panels } from "@/api/panels"
 import { EmblaOptionsType } from 'embla-carousel'
 
 import '@/css/base.css'
@@ -17,50 +18,50 @@ export const metadata: Metadata = {
 
 const OPTIONS: EmblaOptionsType = { loop: true }
 
-const panels = [
-  {
-    name: "Painel 1",
-    health: 87,
-    currentEnergy: 98,
-    operatingPeriod: "08h00 - 16h00",
-  },
-  {
-    name: "Painel 2",
-    health: 55,
-    currentEnergy: 113,
-    operatingPeriod: "08h00 - 16h00",
-  },
-  {
-    name: "Painel 3",
-    health: 73,
-    currentEnergy: 54,
-    operatingPeriod: "08h00 - 16h00",
-  },
-  {
-    name: "Painel 4",
-    health: 81,
-    currentEnergy: 85,
-    operatingPeriod: "08h00 - 16h00",
-  },
-  {
-    name: "Painel 5",
-    health: 93,
-    currentEnergy: 291,
-    operatingPeriod: "08h00 - 16h00",
-  },
-  {
-    name: "Painel 6",
-    health: 39,
-    currentEnergy: 121,
-    operatingPeriod: "08h00 - 16h00",
-  },
-  {
-    name: "Painel 7",
-    health: 99,
-    currentEnergy: 198,
-    operatingPeriod: "08h00 - 16h00",
-  },
-]
+// const panels = [
+//   {
+//     name: "Painel 1",
+//     health: 87,
+//     currentEnergy: 98,
+//     operatingPeriod: "08h00 - 16h00",
+//   },
+//   {
+//     name: "Painel 2",
+//     health: 55,
+//     currentEnergy: 113,
+//     operatingPeriod: "08h00 - 16h00",
+//   },
+//   {
+//     name: "Painel 3",
+//     health: 73,
+//     currentEnergy: 54,
+//     operatingPeriod: "08h00 - 16h00",
+//   },
+//   {
+//     name: "Painel 4",
+//     health: 81,
+//     currentEnergy: 85,
+//     operatingPeriod: "08h00 - 16h00",
+//   },
+//   {
+//     name: "Painel 5",
+//     health: 93,
+//     currentEnergy: 291,
+//     operatingPeriod: "08h00 - 16h00",
+//   },
+//   {
+//     name: "Painel 6",
+//     health: 39,
+//     currentEnergy: 121,
+//     operatingPeriod: "08h00 - 16h00",
+//   },
+//   {
+//     name: "Painel 7",
+//     health: 99,
+//     currentEnergy: 198,
+//     operatingPeriod: "08h00 - 16h00",
+//   },
+// ]
 
 const Panels = () => {
   return (
@@ -79,7 +80,7 @@ const Panels = () => {
             </Link>
           </div>
           <PanelCarousel
-            panels={panels}
+            // panels={panels}
             options={OPTIONS}
           />
         </div>
