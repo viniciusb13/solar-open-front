@@ -3,9 +3,13 @@ import React from "react";
 import { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
 
-const RadialChart: React.FC = () => {
+interface RadialChartPropTypes {
+  value: number;
+}
+
+const RadialChart = ({ value }: RadialChartPropTypes) => {
     
-    const series = [81];
+    const series = [value];
     const options: ApexOptions = {
         chart: {
             height: 220,

@@ -10,7 +10,7 @@ interface PieChartPropTypes {
   chartWidth?: string;
 }
 
-const PieChart = ({ label, NoBorder, chartWidth }: PieChartPropTypes) => {
+const PieChart = ({ label, NoBorder, chartWidth,  }: PieChartPropTypes) => {
   const series = [37, 19, 31];
 
   const options: ApexOptions = {

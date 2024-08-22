@@ -182,7 +182,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               alt="Logo"
               priority
               className={`dark:hidden ${sidebarOpen ? "block" : "hidden"}`}
-              style={{ width: "auto", height: "auto" }}
+              style={{ width: "230", height: "auto" }}
             />
             <Image
               width={176}
@@ -191,7 +191,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               alt="Logo"
               priority
               className={`hidden dark:${sidebarOpen ? "block" : "hidden"}`}
-              style={{ width: "auto", height: "auto" }}
+              style={{ width: "230", height: "auto" }}
             />
             <Image
               width={176}

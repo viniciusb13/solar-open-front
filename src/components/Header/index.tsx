@@ -38,14 +38,14 @@ const Header = (props: {
         </div> */}
 
         <div className="flex items-center gap-2 2xsm:gap-4 w-full justify-end">
-          <ul className="flex items-center gap-2 2xsm:gap-4">
+          <div className="flex items-center gap-2 2xsm:gap-4">
 
             {/* <SearchForm /> */}
 
             {/* <DarkModeSwitcher /> */}
 
             <DropdownNotification />
-          </ul>
+          </div>
 
           <DropdownUser />
         </div>
