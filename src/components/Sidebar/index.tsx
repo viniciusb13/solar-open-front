@@ -7,7 +7,7 @@ import Image from "next/image";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
-
+import '@/css/style.css'
 interface SidebarProps {
   sidebarOpen: boolean;
   setSidebarOpen: (arg: boolean) => void;
@@ -168,14 +168,35 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   return (
     // <ClickOutside onClick={() => setSidebarOpen(false)}>
+    <>
+      <div
+        className="sidebar md:hidden"
+        onClick={() => setSidebarOpen(false)}
+        style={{
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          right: 0,
+          left: 0,
+          background: sidebarOpen ? 'rgba(0, 0, 0, 0.55)' : 'rgba(0, 0, 0, 0)',
+          zIndex: sidebarOpen ? 999 : 0,
+          transition: 'all 600ms ease-in-out'
+        }}
+      ></div>
       <aside
-        // style={{ width: sidebarOpen ? '33%' : ''}}
-        className={`w-auto transition-width duration-700 ease-out flex h-screen flex-col overflow-y-hidden border-r border-stroke bg-white dark:border-stroke-dark dark:bg-gray-dark lg:static ${sidebarOpen && 'w-72.5'} `}
+        style={{
+          top: 0,
+          bottom: 0,
+          left: sidebarOpen ? 0 : '-400px',
+          zIndex: 9999,
+          transition: 'left 600ms ease-in-out'
+        }}
+        className={`absolute md:static w-auto transition-width duration-700 ease-out flex h-screen flex-col overflow-y-hidden border-r border-stroke bg-white dark:border-stroke-dark dark:bg-gray-dark lg:static ${sidebarOpen && 'w-72.5'} `}
       >
         {/* <!-- SIDEBAR HEADER --> */}
         <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5 xl:py-10">
           <Link href="/">
-            <Image
+            {/* <Image
               width={176}
               height={32}
               src={"/images/logo/logo-dark.svg"}
@@ -183,7 +204,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               priority
               className={`dark:hidden ${sidebarOpen ? "block" : "hidden"}`}
               style={{ width: "230", height: "auto" }}
-            />
+            /> */}
             <Image
               width={176}
               height={32}
@@ -232,6 +253,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           {/* <!-- Sidebar Menu --> */}
         </div>
       </aside>
+    </>
     // </ClickOutside>
   );
 };
