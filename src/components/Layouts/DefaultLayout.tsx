@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ReactNode } from "react";
+import React, { useEffect, useState, ReactNode } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
 import PanelModal from '@/components/PanelModal';
@@ -11,6 +11,25 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+  const [sidebarExpanded, setSidebarExpanded] = useState(false);
+
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 767);
+	};
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    if(isMobile){
+      setSidebarExpanded(true)
+    }
+    // setSidebarExpanded(isMobile)
+    return () => {
+      window.removeEventListener('resize',  handleResize);
+    };
+  });
+
   window.document.documentElement.classList.add("dark")
 
   return (
@@ -23,6 +42,9 @@ export default function DefaultLayout({
         <Sidebar
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
+          sidebarExpanded={sidebarExpanded}
+          setSidebarExpanded={setSidebarExpanded}
+          isMobile={isMobile}
         />
         {/* <!-- ===== Sidebar End ===== --> */}
 
@@ -32,6 +54,9 @@ export default function DefaultLayout({
           <Header
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
+            sidebarExpanded={sidebarExpanded}
+            setSidebarExpanded={setSidebarExpanded}
+            isMobile={isMobile}
           />
           {/* <!-- ===== Header End ===== --> */}
 

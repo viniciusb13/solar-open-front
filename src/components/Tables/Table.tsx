@@ -1,33 +1,10 @@
-import { PanelTable } from "@/types/panelTable";
+import { Panel } from "@/types/panel";
 
-const panelData: PanelTable[] = [
-  {
-    name: "Painel 1",
-    storedEnergy: "xxxxxx",
-    currentEnergy: "xxxxx",
-    status: "Funcionando",
-  },
-  {
-    name: "Painel 2",
-    storedEnergy: "xxxxxx",
-    currentEnergy: "xxxxx",
-    status: "Alerta",
-  },
-  {
-    name: "Painel 3",
-    storedEnergy: "xxxxxx",
-    currentEnergy: "xxxxx",
-    status: "Problema",
-  },
-  {
-    name: "Painel 4",
-    storedEnergy: "xxxxxx",
-    currentEnergy: "xxxxx",
-    status: "Desligado",
-  },
-];
+interface TablePropTypes {
+  panels: Panel[];
+}
 
-const Table = () => {
+const Table = ({ panels } : TablePropTypes) => {
   return (
     <div className="rounded-[10px] border border-stroke bg-white p-4 shadow-1 dark:border-dark-3 dark:bg-gray-dark dark:shadow-card sm:p-7.5">
       <div className="max-w-full overflow-x-auto">
@@ -52,31 +29,31 @@ const Table = () => {
             </tr>
           </thead>
           <tbody>
-            {panelData.map((panel, index) => (
+            {panels.map((panel, index) => (
               <tr key={index}>
                 <td
-                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 xl:pl-7.5 ${index === panelData.length - 1 ? "border-b-0" : "border-b"}`}
+                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 xl:pl-7.5 ${index === panels.length - 1 ? "border-b-0" : "border-b"}`}
                 >
                   <h5 className="text-dark dark:text-white">
                     {panel.name}
                   </h5>
                 </td>
                 <td
-                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 ${index === panelData.length - 1 ? "border-b-0" : "border-b"}`}
+                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 ${index === panels.length - 1 ? "border-b-0" : "border-b"}`}
                 >
                   <p className="text-dark dark:text-white">
                     {panel.currentEnergy}
                   </p>
                 </td>
                 <td
-                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 ${index === panelData.length - 1 ? "border-b-0" : "border-b"}`}
+                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 ${index === panels.length - 1 ? "border-b-0" : "border-b"}`}
                 >
                   <p className="text-dark dark:text-white">
                     {panel.storedEnergy}
                   </p>
                 </td>
                 <td
-                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 ${index === panelData.length - 1 ? "border-b-0" : "border-b"}`}
+                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 ${index === panels.length - 1 ? "border-b-0" : "border-b"}`}
                 >
                   <p
                     className={`inline-flex rounded-full px-3.5 py-1 text-body-sm font-medium ${
@@ -93,10 +70,10 @@ const Table = () => {
                   </p>
                 </td>
                 <td
-                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 xl:pr-7.5 ${index === panelData.length - 1 ? "border-b-0" : "border-b"}`}
+                  className={`border-[#eee] px-4 py-4 dark:border-dark-3 xl:pr-7.5 ${index === panels.length - 1 ? "border-b-0" : "border-b"}`}
                 >
                   <div className="flex items-center justify-end space-x-3.5">
-                    <button aria-label="Remover" className="hover:text-primary">
+                    <button aria-label="Remover" className="hover:text-[#D34053]">
                       <svg
                         className="fill-current"
                         width="20"

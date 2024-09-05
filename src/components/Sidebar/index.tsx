@@ -1,16 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
+import { IsScreenLessThan, IsScreenMoreThan} from '@/hooks/useDeviceWidth';
+
 import '@/css/style.css'
 interface SidebarProps {
   sidebarOpen: boolean;
+  sidebarExpanded: boolean;
   setSidebarOpen: (arg: boolean) => void;
+  setSidebarExpanded: (arg: boolean) => void;
+  isMobile: boolean;
 }
 
 const menuGroups = [
@@ -162,7 +167,7 @@ const menuGroups = [
   },
 ];
 
-const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
+const Sidebar = ({ sidebarOpen, setSidebarOpen, sidebarExpanded, setSidebarExpanded, isMobile }: SidebarProps) => {
   const pathname = usePathname();
   const [pageName, setPageName] = useLocalStorage("selectedMenu", "dashboard");
 
@@ -189,9 +194,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           bottom: 0,
           left: sidebarOpen ? 0 : '-400px',
           zIndex: 9999,
-          transition: 'left 600ms ease-in-out'
+          transition: 'all 600ms ease-in-out',
         }}
-        className={`absolute md:static w-auto transition-width duration-700 ease-out flex h-screen flex-col overflow-y-hidden border-r border-stroke bg-white dark:border-stroke-dark dark:bg-gray-dark lg:static ${sidebarOpen && 'w-72.5'} `}
+        className={`absolute md:static flex h-screen flex-col overflow-y-hidden border-r border-stroke bg-white dark:border-stroke-dark dark:bg-gray-dark`}
+        // className={`absolute md:static w-auto transition-width duration-700 ease-out flex h-screen flex-col overflow-y-hidden border-r border-stroke bg-white dark:border-stroke-dark dark:bg-gray-dark lg:static ${sidebarOpen && 'w-72.5'} `}
       >
         {/* <!-- SIDEBAR HEADER --> */}
         <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5 xl:py-10">
@@ -211,7 +217,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               src={"/images/logo/logo.svg"}
               alt="Logo"
               priority
-              className={`hidden dark:${sidebarOpen ? "block" : "hidden"}`}
+              className={`hidden dark:${sidebarExpanded ? "block" : "hidden"}`}
               style={{ width: "230", height: "auto" }}
             />
             <Image
@@ -220,7 +226,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               src={"/images/logo/logo-icon.svg"}
               alt="Logo"
               priority
-              className={`${sidebarOpen && "hidden"}`}
+              className={`${sidebarExpanded && "hidden"}`}
               style={{ width: "auto", height: "auto" }}
             />
           </Link>
@@ -244,6 +250,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       pageName={pageName}
                       setPageName={setPageName}
                       sidebarOpen={sidebarOpen}
+                      sidebarExpanded={sidebarExpanded}
                     />
                   ))}
                 </ul>

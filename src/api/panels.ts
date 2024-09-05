@@ -1,7 +1,7 @@
 import { Panel } from '@/types/panel'
 
 export const panels: Panel[] = [
-{
+    {
         name: 'Painel 1',
         health: 87,
         operatingPeriod: '09h00 - 18h00',

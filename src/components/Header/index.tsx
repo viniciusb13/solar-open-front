@@ -8,7 +8,10 @@ import SearchForm from "@/components/Header/SearchForm";
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
+  sidebarExpanded: string | boolean | undefined;
   setSidebarOpen: (arg0: boolean) => void;
+  setSidebarExpanded: (arg0: boolean) => void;
+  isMobile: boolean;
 }) => {
   return (
     <header className="sticky top-0 z-99 flex w-full border-b border-stroke bg-white dark:border-stroke-dark dark:bg-gray-dark">
@@ -16,7 +19,7 @@ const Header = (props: {
         <button
           onClick={(e) => {
             e.stopPropagation();
-            props.setSidebarOpen(!props.sidebarOpen);
+            props.isMobile ? props.setSidebarOpen(!props.sidebarOpen) : props.setSidebarExpanded(!props.sidebarExpanded);
         }}>
           <Image
               width={32}

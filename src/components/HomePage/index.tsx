@@ -4,6 +4,8 @@ import PieChart from "../Charts/PieChart";
 import BasicChart from "../Charts/BasicChart";
 import Table from "../Tables/Table";
 
+import { panels } from '@/api/panels'
+
 const HomePage: React.FC = () => {
 
   return (
@@ -14,7 +16,9 @@ const HomePage: React.FC = () => {
           label="Monitoramento Geral"
         />
         <div className="col-span-12">
-          <Table />
+          <Table
+            panels={panels}
+          />
         </div>
       </div>
     </>
