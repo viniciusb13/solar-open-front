@@ -8,7 +8,8 @@
     body {
         /* @apply relative z-1 bg-gray-2 font-satoshi text-base font-normal text-dark-5 dark:bg-[#020D1A] dark:text-dark-6; */
         /* @apply relative z-1 bg-gray-2 font-satoshi text-base font-normal text-dark-5 dark:bg-[#37313C] dark:text-dark-6; */
-        @apply relative z-1 bg-gray-2 font-satoshi text-base font-normal text-dark-5 dark:bg-[#252128] dark:text-dark-6;
+        @apply relative z-1 bg-gray-2 text-base font-normal text-dark-5 dark:bg-[#252128] dark:text-dark-6;
+        /* @apply relative z-1 bg-gray-2 font-satoshi text-base font-normal text-dark-5 dark:bg-[#252128] dark:text-dark-6; */
         /* @apply relative z-1 bg-gray-2 font-satoshi text-base font-normal text-dark-5 dark:bg-[#211D24] dark:text-dark-6; */
     }
 }
