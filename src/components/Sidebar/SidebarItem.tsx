@@ -1,7 +1,12 @@
+'use client'
+ 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
 
 const SidebarItem = ({ item, pageName, setPageName, sidebarOpen, sidebarExpanded }: any) => {
+
+  const pathname = usePathname();
 
   const handleClick = () => {
     const updatedPageName =
@@ -15,7 +20,7 @@ const SidebarItem = ({ item, pageName, setPageName, sidebarOpen, sidebarExpanded
         aria-label={item.label}
         href={item.route}
         onClick={handleClick}
-        className={`${pageName === item.label.toLowerCase() ? "bg-primary/[.07] text-primary dark:bg-white/10 dark:text-white" : "text-dark-4 hover:bg-gray-2 hover:text-dark dark:text-gray-5 dark:hover:bg-white/10 dark:hover:text-white"} group relative flex items-center gap-3 rounded-[7px] px-3.5 py-3 font-medium duration-300 ease-in-out ${sidebarExpanded ? 'justify-start' : 'justify-center'}`}
+        className={`${pathname === item.route.toLowerCase() ? "bg-primary/[.07] text-primary dark:bg-white/10 dark:text-white" : "text-dark-4 hover:bg-gray-2 hover:text-dark dark:text-gray-5 dark:hover:bg-white/10 dark:hover:text-white"} group relative flex items-center gap-3 rounded-[7px] px-3.5 py-3 font-medium duration-300 ease-in-out ${sidebarExpanded ? 'justify-start' : 'justify-center'}`}
       >
       <span className={`${sidebarExpanded ? 'h-[28px] w-[28px]' : 'h-[32px] w-[32px]'}`}>{item.icon}</span>
       {/* <span className={`lg:h-[28px] lg:w-[28px] h-[32px] w-[32px] ${sidebarOpen ? 'h-[28px] w-[28px]' : 'h-[32px] w-[32px]'}`}>{item.icon}</span> */}

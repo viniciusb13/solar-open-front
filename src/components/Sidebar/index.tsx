@@ -158,10 +158,7 @@ const menuGroups = [
           </svg>
         ),
         label: "Sair",
-        route: "#",
-        // children: [
-        //   { label: "Sign In", route: "/auth/signin" },
-        // ],
+        route: "/auth/signin",
       },
     ],
   },

@@ -38,7 +38,7 @@ export default function GoogleSigninButton({ text }: { text: string }) {
           </defs>
         </svg>
       </span>
-      {text} with Google
+      {text} com Google
     </button>
   );
 }

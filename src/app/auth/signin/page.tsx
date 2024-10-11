@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { Metadata } from "next";
-import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import Signin from "@/components/Auth/Signin";
+import AuthLayout from "@/components/Layouts/AuthLayout";
+
 
 export const metadata: Metadata = {
   title: "Entrar | Solar Open",
@@ -13,9 +13,7 @@ export const metadata: Metadata = {
 
 const SignIn: React.FC = () => {
   return (
-    <DefaultLayout>
-      <Breadcrumb pageName="Sign In" />
-
+    <AuthLayout>
       <div className="rounded-[10px] bg-white shadow-1 dark:bg-gray-dark dark:shadow-card">
         <div className="flex flex-wrap items-center">
           <div className="w-full xl:w-1/2">
@@ -43,17 +41,16 @@ const SignIn: React.FC = () => {
                 />
               </Link>
               <p className="mb-3 text-xl font-medium text-dark dark:text-white">
-                Sign in to your account
+                Entre na sua conta
               </p>
 
               <h1 className="mb-4 text-2xl font-bold text-dark dark:text-white sm:text-heading-3">
-                Welcome Back!
+                Bem vindo de volta!
               </h1>
 
-              <p className="w-full max-w-[375px] font-medium text-dark-4 dark:text-dark-6">
-                Please sign in to your account by completing the necessary
-                fields below
-              </p>
+              {/* <p className="w-full max-w-[375px] font-medium text-dark-4 dark:text-dark-6">
+                Entre na sua conta preenchendo os campos ao lado
+              </p> */}
 
               <div className="mt-31">
                 <Image
@@ -68,7 +65,7 @@ const SignIn: React.FC = () => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
+    </AuthLayout>
   );
 };
 
