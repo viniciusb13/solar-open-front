@@ -474,3 +474,10 @@ input[type="search"]::-webkit-search-cancel-button {
 .sidebar:empty {
     transition: all 600ms ease-in-out;
 }
+
+.btn-close.modal-close:hover {
+    path {
+        fill: #CC7676;
+        transition: all 300ms ease-in-out;
+    }
+}

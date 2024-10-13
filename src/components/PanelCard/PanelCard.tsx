@@ -8,15 +8,13 @@ import CloseMark from '../CloseMarks/CloseMark';
 import { Panel } from '@/types/panel';
 
 const PanelCard = ({ name, health, currentEnergy, operatingPeriod, storedEnergy, brand, model, status }: Panel) => {
-    const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    // const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     return (
         <>
-            <div className='w-full px-16 py-8 rounded-[32px] bg-white bg-opacity-5 flex flex-col justify-center items-center' onClick={onOpen}>
-            {/* // <Link href="?modal=true" className='w-full px-16 py-8 rounded-[32px] bg-white bg-opacity-5 flex flex-col justify-center items-center'> */}
-                {/* <Link href="?modal=true"> */}
-                    <h4 className="text-3xl font-medium mb-8">{name}</h4>
-                {/* </Link> */}
+            <div className='w-full px-16 py-8 rounded-[32px] bg-white bg-opacity-5 flex flex-col justify-center items-center'>
+            {/* <div className='w-full px-16 py-8 rounded-[32px] bg-white bg-opacity-5 flex flex-col justify-center items-center' onClick={onOpen}> */}
+                <h4 className="text-3xl font-medium mb-8">{name}</h4>
                 <div className="bg-white bg-opacity-15 rounded-3xl py-1 px-3 flex items-center gap-3 text-lg">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1"/>
@@ -49,7 +47,7 @@ const PanelCard = ({ name, health, currentEnergy, operatingPeriod, storedEnergy,
                 </div>
             {/* // </Link> */}
             </div>
-            <Modal
+            {/* <Modal
                 isOpen={isOpen}
                 onOpenChange={onOpenChange}
                 hideCloseButton
@@ -60,7 +58,7 @@ const PanelCard = ({ name, health, currentEnergy, operatingPeriod, storedEnergy,
                 <ModalContent className="bg-gray-dark m-auto rounded-2xl p-8 text-white w-fit relative">
                 {(onClose) => (
                     <>
-                        {/* <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader> */}
+                        <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
                         <ModalBody className="flex flex-col items-center">
                             <button className="absolute right-4 top-4" type="button" onClick={onClose}><CloseMark /></button>
                             <div className="flex flex-col items-center">
@@ -123,7 +121,7 @@ const PanelCard = ({ name, health, currentEnergy, operatingPeriod, storedEnergy,
                     </>
                 )}
                 </ModalContent>
-            </Modal>
+            </Modal> */}
         </>
     );
 };

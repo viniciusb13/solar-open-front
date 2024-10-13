@@ -12,7 +12,8 @@ import {
   usePrevNextButtons
 } from './CarouselArrowButtons'
 import { DotButton, useDotButton } from './CarouselDotButton'
-import PanelCard from '@/components/PanelCard/PanelCard'
+// import PanelCard from '@/components/PanelCard/PanelCard'
+import PanelModal from '@/components/PanelModal'
 import { panels } from '@/api/panels'
 
 const TWEEN_FACTOR_BASE = 0.84
@@ -101,7 +102,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {panels.map((panel, index) => (
             <div className="embla__slide" key={index}>
-                <PanelCard
+                <PanelModal
                     name={panel.name}
                     health={panel.health}
                     currentEnergy={panel.currentEnergy}
@@ -111,6 +112,16 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     model={panel.model}
                     status={panel.status}
                 />
+                {/* <PanelCard
+                    name={panel.name}
+                    health={panel.health}
+                    currentEnergy={panel.currentEnergy}
+                    operatingPeriod={panel.operatingPeriod}
+                    storedEnergy={panel.storedEnergy}
+                    brand={panel.brand}
+                    model={panel.model}
+                    status={panel.status}
+                /> */}
             </div>
           ))}
         </div>

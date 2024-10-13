@@ -2,8 +2,6 @@
 import React, { useEffect, useState, ReactNode } from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
-import PanelModal from '@/components/PanelModal';
-import NewPanelModal from "@/components/NewPanelModal";
 
 export default function DefaultLayout({
   children,
@@ -12,7 +10,7 @@ export default function DefaultLayout({
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
-  const [sidebarExpanded, setSidebarExpanded] = useState(false);
+  const [sidebarExpanded, setSidebarExpanded] = useState(true);
 
 
   const handleResize = () => {
@@ -34,8 +32,6 @@ export default function DefaultLayout({
 
   return (
     <>
-      <PanelModal />
-      <NewPanelModal />
       {/* <!-- ===== Page Wrapper Star ===== --> */}
       <div className="flex h-screen overflow-hidden">
         {/* <!-- ===== Sidebar Star ===== --> */}

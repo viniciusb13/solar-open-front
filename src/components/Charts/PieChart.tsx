@@ -73,12 +73,10 @@ const PieChart = ({ label, NoBorder, chartWidth,  }: PieChartPropTypes) => {
 
   return (
     <div className={`col-span-12 rounded-[10px] bg-white px-7.5 pb-7 pt-7.5 dark:bg-gray-dark ${!NoBorder && "shadow-1 dark:shadow-card"} xl:col-span-5`}>
-      <div className="mb-9 justify-between gap-4 sm:flex">
-        <div>
-          <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
-            {label}
-          </h4>
-        </div>
+      <div className="mb-9 justify-center gap-4 sm:flex">
+        <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
+          {label}
+        </h4>
         {/* <div>
           <DefaultSelectOption options={["Mensal", "Anual"]} />
         </div> */}
