@@ -121,7 +121,7 @@ const Table = ({ panels } : TablePropTypes) => {
                             />
                             <ButtonSolid
                               label="Deletar"
-                              customClasses="mt-8 bg-[#D34053] text-white"
+                              customClasses="mt-8 bg-[#D34053] text-white bg-[#D34053]"
                               onClick={() => console.log('button')}
                             />
                           </div>

@@ -40,7 +40,7 @@ const Content = () => {
             />
             <ButtonSolid
                 label="Acionar"
-                customClasses="mt-8 w-full"
+                customClasses="mt-8 w-full bg-[#FFD159]"
                 onClick={onClose}
             />
         </>
