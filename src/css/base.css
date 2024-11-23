@@ -92,3 +92,29 @@ body {
   --admonition-warning-rgb-value: 253, 186, 116;
   --admonition-danger-rgb-value: 220, 38, 38;
 }
+
+::-webkit-scrollbar {
+  /* width */
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  /* track */
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb {
+  /* handle */
+  background: #ffd159;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* handle on hover */
+  background: #E2B94F;
+}
+
+.no-scroll::-webkit-scrollbar {
+  /* width */
+  width: 0px;
+}

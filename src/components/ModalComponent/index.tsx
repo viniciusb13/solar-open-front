@@ -21,10 +21,10 @@ export default function ModalComponent({ title, modalTrigger, modalContent }: Mo
         portalContainer={document.body}
         classNames={{
           body: "py-6",
-          wrapper: `z-[999999] mx-auto`,
+          wrapper: `z-[999999] mx-auto max-h-screen`,
           // backdrop: "z-[99999] bg-[#000] bg-opacity-50 backdrop-blur",
           backdrop: "z-[99999] bg-[#000] bg-opacity-75 backdrop-opacity-90",
-          base: `border-[#292f46] bg-[#37313c] text-[#a8b0d3] rounded-2xl min-w-1/2 max-w-screen-md`,
+          base: `no-scroll my-4 max-h-[90%] h-fit overflow-auto border-[#292f46] bg-[#37313c] text-[#a8b0d3] rounded-2xl min-w-1/2 max-w-screen-md`,
           header: "border-b-[1px] border-[#292f46]",
         }}
 
